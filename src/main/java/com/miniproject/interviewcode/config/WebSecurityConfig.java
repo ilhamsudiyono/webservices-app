@@ -20,23 +20,17 @@ import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.logout.HttpStatusReturningLogoutSuccessHandler;
-import org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.context.request.NativeWebRequest;
@@ -52,8 +46,6 @@ import com.miniproject.interviewcode.auth.sercurity.CustomUserDetailsService;
 import com.miniproject.interviewcode.auth.sercurity.JwtAuthenticationEntryPoint;
 import com.miniproject.interviewcode.auth.sercurity.JwtAuthenticationFilter;
 
-import org.springframework.security.core.session.SessionRegistry;
-import org.springframework.security.core.session.SessionRegistryImpl;
 
 
 
@@ -125,11 +117,11 @@ public class WebSecurityConfig{
          .authorizeRequests()
          .antMatchers(AUTH_LIST)
       	.permitAll()
-          .antMatchers("/api/auth/**")
+          .antMatchers("/public-api/**")
               .permitAll()
-          .antMatchers(HttpMethod.GET,"/api/users/**","/api/miniproject/**","/listings")
+          .antMatchers(HttpMethod.GET,"/public-api/**","/users/**","/listings","/create/listings")
               .permitAll()
-            .antMatchers(HttpMethod.POST,"/api/users/**","/api/miniproject/**","/listings","/api/auth/**")
+            .antMatchers(HttpMethod.POST,"/public-api/**","/users/**","/listings","/create/listings")
          .authenticated()
          .and()
          .httpBasic()
@@ -162,7 +154,6 @@ public class WebSecurityConfig{
 
 	}
 	
-
 
 
 	@Bean

@@ -2,10 +2,6 @@ package com.miniproject.interviewcode.model.role;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import org.hibernate.annotations.NaturalId;
-
-
-import java.sql.Timestamp;
 import java.time.Instant;
 
 

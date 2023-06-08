@@ -1,7 +1,6 @@
 package com.miniproject.interviewcode.service.user;
 
 import java.util.List;
-import java.util.Optional;
 
 import com.miniproject.interviewcode.model.role.Role;
 import com.miniproject.interviewcode.model.role.RoleName;

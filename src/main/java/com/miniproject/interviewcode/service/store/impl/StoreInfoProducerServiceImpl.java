@@ -1,13 +1,10 @@
 package com.miniproject.interviewcode.service.store.impl;
 
 import java.util.ArrayList;
-import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.hibernate.sql.DecodeCaseFragment;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -17,13 +14,10 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
+
 import org.springframework.stereotype.Service;
 
 import com.miniproject.interviewcode.model.store.StoreInformation;
-import com.miniproject.interviewcode.model.user.User;
 import com.miniproject.interviewcode.repository.IStoreInformationRepository;
 import com.miniproject.interviewcode.service.store.IStoreInformationService;
 

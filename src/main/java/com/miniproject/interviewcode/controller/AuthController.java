@@ -101,10 +101,10 @@ public class AuthController {
 
 		Instant instant = Instant.now();
 
-		Role auth = null;
+//		Role auth = null;
 
 		if (userRepository.existsByNoTelp(signUpRequest.getNoTelp())) {
-			return new ResponseEntity(new ApiResponse(false, "Phone number already in use!"), HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<Object>(new ApiResponse(false, "Phone number already in use!"), HttpStatus.BAD_REQUEST);
 		}
 
 		// Creating user's account
