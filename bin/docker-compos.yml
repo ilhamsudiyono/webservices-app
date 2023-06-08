@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+
+  currency-exchange:
+    image: interviewcode/server-side-project-0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8098:8098"
+    networks:
+      - currency-network
+
+networks:
+  currency-network:

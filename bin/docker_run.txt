@@ -1,0 +1,11 @@
+docker --version
+
+docker run interviewcode/test-project-sawitpro:1.0.0.RELEASE
+
+docker run -p 5000:5000 interviewcode/test-project-sawitpro:1.0.0.RELEASE
+
+docker push docker.io/interviewcode/test-project-sawitpro:1.0.0.RELEASE
+
+docker-compose --version
+
+docker-compose up
